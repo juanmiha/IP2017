@@ -1,0 +1,109 @@
+package org.ip.sesion05;
+
+public class Circulo {
+	private double xCentro;
+	private double yCentro;
+	private double radio;
+	private static int numCirculos = 0;
+	
+	public Circulo(){
+		this(0.0,0.0,0.0);
+		numCirculos ++;
+	}
+	
+	public Circulo(double xCentro, double yCentro, double radio){
+		super();
+		this.xCentro = xCentro;
+		this.yCentro = yCentro;
+		this.radio = radio;
+		numCirculos ++;
+	}
+	public Circulo(double radio){
+		super();
+		this.radio = radio;
+		numCirculos ++;
+	}
+	public Circulo (double xCentro , double yCentro){
+		super();
+		this.xCentro = xCentro;
+		this.yCentro = yCentro;
+		numCirculos ++;
+	}
+	public Circulo(Object o){
+		this.xCentro = o.getxCentro();
+		this.yCentro = o.getyCentro();
+		this.radio = o.getRadio();
+		numCirculos ++;
+	}
+
+	public double getxCentro() {
+		return xCentro;
+	}
+
+	public void setxCentro(double xCentro) {
+		this.xCentro = xCentro;
+	}
+
+	public double getyCentro() {
+		return yCentro;
+	}
+
+	public void setyCentro(double yCentro) {
+		this.yCentro = yCentro;
+	}
+
+	public double getRadio() {
+		return radio;
+	}
+
+	public void setRadio(double radio) {
+		this.radio = radio;
+	}
+
+	public static int getNumCirculos() {
+		return numCirculos;
+	}
+
+	@Override
+	public String toString() {
+		return "Circulo = {(xCentro=" + xCentro + ", yCentro=" + yCentro + "), radio=" + radio + "}";
+	}
+	public boolean equals(Object obj){
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Circulo otro = (Circulo) obj;
+		return xCentro == otro.getxCentro() && yCentro == otro.getyCentro() && radio == otro.getRadio();
+	}
+	
+	public double calcularArea(double radio){
+		return Math.PI * radio * radio;
+	}
+	public double calcularLongitud(double radio){
+		return 2*Math.PI * radio;
+	}
+	public double calcularDiametro(double radio){
+		return 2*radio;
+	}
+	public int compareTo(Object obj){
+		Circulo otro = (Circulo) obj;
+		if (calcularArea() == otro.calcularArea())
+			return 0;
+		else if (calcularArea() < otro.calcularArea())
+			return -1;
+		else
+			return 1;
+	}
+	
+	public void desplazar(double dx, double dy){
+		this.xCentro = dx;
+		this.yCentro = dy;
+		numCirculos ++;
+	}
+	public void cambiarTamaño(double factor){
+			this.radio = factor;
+	}
+}

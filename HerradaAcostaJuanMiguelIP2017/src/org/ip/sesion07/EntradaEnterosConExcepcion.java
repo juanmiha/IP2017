@@ -1,0 +1,30 @@
+package org.ip.sesion07;
+import java.util.Scanner;
+import java.util.InputMismatchException;
+public class EntradaEnterosConExcepcion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner entrada = new Scanner(System.in);
+		int number1 = 0;
+		int number2 = 0;
+		// Introducir dos enteros
+		System.out.print("Introduzca dos valores enteros: ");
+		boolean parada = true;
+		while(parada == true){
+			try{
+				number1 = entrada.nextInt();
+				number2 = entrada.nextInt();
+				parada = false;
+			}catch(InputMismatchException exp){
+				System.out.print("Incorrecto, Introduza dos valores enteros");
+				entrada.nextLine();//descarta el resto de la linea
+				parada = true;
+			}
+			
+		}		
+		System.out.println("La suma es  " + (number1 + number2));
+		entrada.close();
+	}
+
+}

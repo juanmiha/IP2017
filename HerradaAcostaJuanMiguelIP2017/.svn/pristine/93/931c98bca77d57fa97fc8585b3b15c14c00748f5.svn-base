@@ -1,0 +1,74 @@
+package org.ip.sesion06;
+
+public class TrianguloHer extends ObjGeometrico{
+	private double lonitudLado1;
+	private double lonitudLado2;
+	private double lonitudLado3;
+
+	public TrianguloHer(){
+		lonitudLado1 = 1.0;
+		lonitudLado2 = 1.0;
+		lonitudLado3 = 1.0;
+	}
+
+	public TrianguloHer(double lonitudLado1,double lonitudLado2,double lonitudLado3){
+		super();
+		this.lonitudLado1= lonitudLado1;
+		this.lonitudLado2= lonitudLado2;
+		this.lonitudLado3= lonitudLado3;
+	}
+	public TrianguloHer(double lonitudLado1, double lonitudLado2,double lonitudLado3,String color,boolean relleno){
+		super(0,0,color, relleno);
+		this.lonitudLado1 = lonitudLado1;
+		this.lonitudLado2 = lonitudLado2;
+		this.lonitudLado3 = lonitudLado3;
+	}
+
+	public double getLonitudLado1() {
+		return lonitudLado1;
+	}
+
+	public void setLonitudLado1(double lonitudLado1) {
+		this.lonitudLado1 = lonitudLado1;
+	}
+
+	public double getLonitudLado2() {
+		return lonitudLado2;
+	}
+
+	public void setLonitudLado2(double lonitudLado2) {
+		this.lonitudLado2 = lonitudLado2;
+	}
+
+	public double getLonitudLado3() {
+		return lonitudLado3;
+	}
+
+	public void setLonitudLado3(double lonitudLado3) {
+		this.lonitudLado3 = lonitudLado3;
+	}
+
+	@Override
+	public String toString() {
+		return "Un TrianguloHer = " + super.toString() + "longuitud de lados [" + lonitudLado1 + ", " + lonitudLado2 + ", " + lonitudLado3 + "]";
+	}
+	public double calcularArea(){
+		double S = calcularPerimetro();
+		double area = Math.sqrt(S*(S-lonitudLado1)*(S-lonitudLado2)*(S-lonitudLado3));
+		return area;
+	}
+	public double calcularPerimetro(){
+		double S = (lonitudLado1+lonitudLado2+lonitudLado3)/2;
+		return S;
+	}
+	public void mostrarTriangulo(){
+		System.out.println("El triangulo ha sido creado" + super.getFechaCreacion());
+		if (super.isRelleno() == false){
+			System.out.println("Es de color" + super.getColor() + ", sin relleno");
+		}else
+			System.out.println("Es de color" + super.getColor() + ", con relleno");
+
+		System.out.println("Ubicado en (" + super.getX() + ", " + super.getY() + ") y con longitud de lados [" + lonitudLado1 + ", "
+				+ lonitudLado2 + ", " + lonitudLado3 + "]");
+	}
+}

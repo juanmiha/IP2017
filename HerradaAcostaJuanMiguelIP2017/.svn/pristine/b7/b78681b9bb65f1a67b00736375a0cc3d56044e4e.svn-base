@@ -1,0 +1,13 @@
+package org.ip.sesion05;
+
+public class TestFraccion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		// crear las fracciones 1/5 4/5 -11/22
+		System.out.println();
+	}
+
+}

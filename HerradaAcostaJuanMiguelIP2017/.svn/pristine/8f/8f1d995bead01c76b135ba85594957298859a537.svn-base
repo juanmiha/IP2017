@@ -1,0 +1,114 @@
+package org.ip.sesion09;
+
+public class OperacionesMatricesCuadradas {
+	public static boolean esSimetrica(int [][] matriz) {
+		boolean simetria = true;
+		int fila = 0; int columna;
+		while (simetria && (fila < matriz.length)) {
+			columna = 0;
+			while (simetria && (columna < matriz[fila].length)) {
+				if (matriz[fila][columna] != matriz[columna][fila])
+					simetria = false;
+				columna++;
+			}
+			fila++;
+		}
+		return simetria;
+	}
+	public static int sumaDiagonal(int[][] a){
+		int sumadiagonal = 0;
+		for (int fila = 0;fila < a.length;fila++){
+			for(int columna = 0; columna < a[fila].length;columna++){
+				if(fila==columna){
+					sumadiagonal += a[fila][columna];
+				}
+			}
+		}
+		return sumadiagonal;
+	}
+	public static int[][] suma(int[][] a,int[][] b){
+		int dimension1 = a.length;
+		int dimension2 = a[0].length;
+		int [][] resultado = new int [dimension1][dimension2];
+		for (int fila = 0;fila < a.length;fila++){
+			for(int columna = 0; columna < a[fila].length;columna++){
+				resultado[fila][columna]=a[fila][columna]+b[fila][columna];
+			}
+		}
+		return resultado;
+	}
+	public static int[][] resta(int[][] a,int[][] b){
+		int dimension1 = a.length;
+		int dimension2 = a[0].length;
+		int [][] resultado = new int [dimension1][dimension2];
+		for (int fila = 0;fila < a.length;fila++){
+			for(int columna = 0; columna < a[fila].length;columna++){
+				resultado[fila][columna]=a[fila][columna]-b[fila][columna];
+			}
+		}
+		return resultado;
+	}
+	public static int[][] producto(int[][] a,int[][] b){
+		int dimension1 = a.length;
+		int dimension2 = a[0].length;
+		int [][] resultado = new int [dimension1][dimension2];
+		for (int fila = 0;fila < a.length;fila++){
+			for(int columna = 0; columna < b.length;columna++){
+				resultado[fila][columna]=0;
+				for(int k = 0;k < b.length;k++)
+					resultado[fila][columna]+=a[fila][k]*b[k][columna];
+			}
+		}
+		return resultado;
+	}
+	public static int[][] producto(int[][] a,int d){
+		int dimension1 = a.length;
+		int dimension2 = a[0].length;
+		int [][] resultado = new int [dimension1][dimension2];
+		for (int fila = 0;fila < a.length;fila++){
+			for(int columna = 0; columna < a[fila].length;columna++){
+				resultado[fila][columna]=a[fila][columna]*d;
+			}
+		}
+		return resultado;
+	}
+	public static int[][] transpuesta(int[][] a){
+		int [][] transpuesta = new int [a.length][a[0].length];
+		for (int fila = 0;fila < a.length;fila++){
+			for(int columna = 0; columna < a[fila].length;columna++){
+				if(fila == columna)
+					transpuesta[fila][columna]=a[fila][columna];
+				else
+					transpuesta[fila][columna]=a[columna][fila];
+			}
+		}
+		return transpuesta;
+	}
+	public static int[] sumaFilas(int[][] a){
+		int[] sumaFilas =new int [a.length];
+		for (int fila = 0;fila < a.length;fila++){
+			sumaFilas[fila] = 0 ;
+			for(int columna = 0; columna < a[fila].length;columna++){
+				sumaFilas[fila]+=a[fila][columna];
+			}
+		}
+		return sumaFilas;
+	}
+	public static int[] sumaColumnas(int[][] a){
+		int[] sumaColumnas =new int [a.length];
+		for (int columna = 0;columna < a[0].length;columna++){
+			sumaColumnas[columna] = 0 ;
+			for(int fila = 0; fila < a.length;fila++){
+				sumaColumnas[columna]+=a[columna][fila];
+			}
+		}
+		return sumaColumnas;
+	}
+	public static int[] elementoMenor(int[][] a){
+		int[] elementoMenor = new int[3];
+
+
+		return elementoMenor;
+	}
+}
+

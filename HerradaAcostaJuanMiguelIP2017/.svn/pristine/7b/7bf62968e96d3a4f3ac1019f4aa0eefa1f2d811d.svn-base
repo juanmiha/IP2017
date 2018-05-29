@@ -1,0 +1,12 @@
+package org.ip.sesion02;
+
+public class EcuacionSegundoGrado {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Muestra por pantalla las raíces de una ecuación de 2º grado dados los valores de a, b y c. 
+		//ab^2+ bx + c = 0.
+		
+	}
+
+}

@@ -1,0 +1,33 @@
+package org.ip.sesion08;
+public class PruebaArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int [] array = {5, 10, 15, 2, 4, 23, 7, 13, 8, 17, 27};
+		System.out.println(PracticarConArrays.mostrarArray(array));
+		int maximo = array[0];
+		System.out.println(maximo);
+		int indice = 0;
+		for (int i = 1;i<array.length;i++){
+			if(maximo < array[i]){
+				maximo = array[i];
+				indice = i;
+			}
+		}
+		System.out.println(indice);
+		System.out.println(PracticarConArrays.indiceMaximoValor(array));
+		System.out.println(PracticarConArrays.indiceMinimoValor(array));
+	}
+	public static int indiceMaximoValor(int[] array){
+		int maximo = array[0];
+		int indice = 0;
+		for (int i = 1;i<=array.length;i++){
+			if(maximo < array[i]){
+				maximo = array[i];
+				indice = i;
+			}
+		}
+		return indice;
+	}
+}

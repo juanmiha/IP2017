@@ -1,0 +1,19 @@
+package org.ip.sesion08;
+
+public class EstadisticasArrays {
+
+	public static String mostrarArray(int[] a){
+        String mostrar = "Array de Enteros:";
+        for(int b:a){
+            mostrar= mostrar + "  " + b ;
+        }
+        return mostrar;
+    }
+	public static String mostrarArray(double[] a){
+        String mostrar = "Array de Enteros:";
+        for(double b:a){
+            mostrar= mostrar + "  " + b ;
+        }
+        return mostrar;
+    }
+}

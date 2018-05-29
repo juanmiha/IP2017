@@ -1,0 +1,51 @@
+package org.ip.sesion08;
+
+public class PracticarConArrays {
+	public static int[] invertir(int[] array){
+		int [] arrayb = new int[array.length];;
+		for (int i = 0, j = array.length - 1; i < array.length; i++, j--) {
+			arrayb[j] = array[i];
+			}
+		return arrayb;
+	}
+	public static int[] desplazar(int[] array){
+		int temp = array[0] ;
+		for (int i = 1; i < array.length; i++) {
+		array[i - 1] = array[i];
+		}
+		array[array.length - 1] = temp;
+		return array;
+	}
+	public static int indiceMaximoValor(int[] array){
+		int maximo = array[0];
+		int indice = 0;
+		for (int i = 1;i<array.length;i++){
+			if(maximo <= array[i]){
+				maximo = array[i];
+				indice = i;
+			}
+		}
+		return indice;
+	}
+	public static int indiceMinimoValor(int[] array){
+		int minimo = array[0];
+		int indice = 0;
+		for (int i = 1;i<array.length;i++){
+			if(minimo >= array[i]){
+				minimo = array[i];
+				indice = i;
+			}
+		}
+		return indice;
+	}
+	public static String mostrarArray(int[] a){
+		String mostrar = "Array de Enteros: ";
+        for (int i = 0; i < a.length; i++) {
+			if (i != a.length - 1)
+				mostrar += a[i] + "\t";
+			else
+				mostrar += a[i];
+		}
+		return mostrar;
+    }
+}

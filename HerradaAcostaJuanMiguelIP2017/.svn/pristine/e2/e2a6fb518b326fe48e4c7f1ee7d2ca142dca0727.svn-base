@@ -1,0 +1,56 @@
+package org.ip.sesion08;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class EstadisticasArraysTestJUnit4 {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testEstadisticasArray() {
+		int [] arrayEnteros = {5, 10, 15};
+		double [] arrayReales = {5.0, 25.5, 15.75, 10.25};
+
+		String salidaArrayEnteros = EstadisticasArrays.mostrarArray(arrayEnteros);
+		assertEquals(salidaArrayEnteros, "Array de Enteros:  5  10  15");
+
+		String salidaArrayReales = EstadisticasArrays.mostrarArray(arrayReales);
+		assertEquals(salidaArrayReales, "Array de Reales:  5.0  25.5  15.75  10.25");
+
+		int minimoArrayEnteros = EstadisticasArrays.min(arrayEnteros);
+		int maximoArrayEnteros = EstadisticasArrays.max(arrayEnteros);
+		double mediaArrayEnteros = EstadisticasArrays.media(arrayEnteros);
+		double varianzaArrayEnteros = EstadisticasArrays.var(arrayEnteros);
+		double desviacionArrayEnteros = EstadisticasArrays.stdDev(arrayEnteros);
+		assertTrue(minimoArrayEnteros == 5);
+		assertTrue(maximoArrayEnteros == 15);
+		assertTrue(mediaArrayEnteros == 10.0);
+		assertTrue(varianzaArrayEnteros == 25.0);
+		assertTrue(desviacionArrayEnteros == 5.0);
+
+		double minimoArrayReales = EstadisticasArrays.min(arrayReales, 1, 2);
+		double maximoArrayReales = EstadisticasArrays.max(arrayReales, 1, 2);
+		double mediaArrayReales = EstadisticasArrays.media(arrayReales, 1, 2);
+		double varianzaArrayReales = EstadisticasArrays.var(arrayReales, 1, 2);
+		double desviacionArrayReales = EstadisticasArrays.stdDev(arrayReales, 1, 2);
+		assertTrue(minimoArrayReales == 15.75);
+		assertTrue(maximoArrayReales == 25.50);
+		assertTrue(mediaArrayReales == 20.625);
+		assertTrue(varianzaArrayReales == 47.53125);
+		assertTrue(desviacionArrayReales == 6.894291116568838);
+
+		Arrays.sort(arrayReales);
+		salidaArrayReales = EstadisticasArrays.mostrarArray(arrayReales);
+		assertEquals(salidaArrayReales, "Array de Reales:  5.0  10.25  15.75  25.5");
+		salidaArrayReales = Arrays.toString(arrayReales);
+		assertEquals(salidaArrayReales, "[5.0, 10.25, 15.75, 25.5]");
+
+	}
+}

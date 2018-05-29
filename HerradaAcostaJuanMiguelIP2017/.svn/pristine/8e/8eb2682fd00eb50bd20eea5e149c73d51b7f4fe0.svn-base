@@ -1,0 +1,19 @@
+package org.ip.sesion03;
+
+import java.util.Scanner;
+
+public class Primo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner entrada=new Scanner(System.in);
+		int numero;
+		do{
+			System.out.println("Indica un número (>1) para saber si es un número primo");
+			numero = entrada.nextInt();
+		}while(numero <= 1);
+		
+		entrada.close();
+	}
+
+}

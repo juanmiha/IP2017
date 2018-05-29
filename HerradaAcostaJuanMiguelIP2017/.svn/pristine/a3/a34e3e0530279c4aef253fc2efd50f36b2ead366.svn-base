@@ -1,0 +1,19 @@
+package org.ip.sesion03;
+
+public class TrianguloNumeros {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int numeroFilas = 10;
+			System.out.println("Triangulo rectangulo de numeros para un valor de lado = " + numeroFilas);
+		while (numeroFilas > 0){
+			for(int i=0;i<=numeroFilas;i++){
+			for(int k=0;k<numeroFilas;k++){
+				System.out.print(k);
+				}
+			System.out.println(i);
+			}
+		}
+	}
+
+}
